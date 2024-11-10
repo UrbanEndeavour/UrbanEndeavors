@@ -4,8 +4,8 @@ import MapView, { Marker, Region } from 'react-native-maps';
 
 const Map: React.FC = () => {
   const initialRegion: Region = {
-    latitude: 37.78825,
-    longitude: -122.4324,
+    latitude: 42.7284, 
+    longitude: -73.6918, 
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   };

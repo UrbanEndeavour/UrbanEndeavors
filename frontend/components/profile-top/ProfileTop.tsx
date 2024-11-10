@@ -2,15 +2,13 @@ import React from 'react'
 import { StyleSheet, View, Text } from 'react-native';
 import ProfilePicture from '../profile-picture/ProfilePicture';
 
-const ProfileTop: React.FC = () => {
-    const imageUrl = require('../../assets/images/react-logo.png');
-  
+const ProfileTop: React.FC = () => {  
     return (
     <View style={styles.profileContainer}>
       {/* Profile Picture Container */}
       <View style={styles.imgNameContainer}>
-      <ProfilePicture uri={imageUrl}/>
-        <Text style={styles.profileTitle}>Your Title</Text>
+      <ProfilePicture/>
+        <Text style={styles.profileTitle}>Jacob Lleonart</Text>
       </View>
 
       {/* Details Container */}
@@ -25,7 +23,7 @@ const ProfileTop: React.FC = () => {
 
         {/* Lower Container - Text and Integer */}
         <View style={styles.lowerContainer}>
-          <Text style={styles.detailText}>Points:</Text>
+          <Text style={styles.detailText}>Level:</Text>
           <Text style={styles.pointsText}>1234</Text>
         </View>
       </View>
@@ -41,7 +39,6 @@ const styles = StyleSheet.create({
     top: 0,
     flexDirection: 'row',
     padding: 10,
-    backgroundColor: 'blue',
     height: '20%', // Adjust based on your design
     width: '100%'
   },
@@ -59,7 +56,7 @@ const styles = StyleSheet.create({
   },
   profileTitle: {
     fontSize: 16,
-    color: 'white',
+    color: '808080',
   },
   detailsContainer: {
     justifyContent: 'space-evenly',
@@ -73,7 +70,7 @@ const styles = StyleSheet.create({
   },
   detailText: {
     fontSize: 14,
-    color: 'white',
+    color: '808080',
   },
   xpBarBackground: {
     width: '100%',
@@ -95,7 +92,7 @@ const styles = StyleSheet.create({
   },
   pointsText: {
     fontSize: 14,
-    color: 'white',
+    color: '808080',
     marginLeft: 5,
   }
   

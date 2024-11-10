@@ -4,7 +4,11 @@ import { View, Image, StyleSheet } from 'react-native';
 const ProfilePicture = ({ uri }: { uri: string }) => {
   return (
     <View style={styles.container}>
-      <Image source={{ uri }} style={styles.profileImage} />
+      <Image 
+        source={{ uri }} 
+        style={styles.profileImage} 
+        onError={() => console.log('Failed to load image')} // Log or handle the error
+      />
     </View>
   );
 };
@@ -15,11 +19,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   profileImage: {
-    width: 100, // Adjust the size as needed
-    height: 100,
-    borderRadius: 50, // Half of width/height for a circle
+    width: 50, // Adjust the size as needed
+    height: 50,
+    borderRadius: 25, // Half of width/height for a circle
     borderWidth: 2,
-    borderColor: '#fff',
+    borderColor: '#808080', // Change to valid color value (with `#`)
   },
 });
 

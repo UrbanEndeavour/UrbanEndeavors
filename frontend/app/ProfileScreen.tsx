@@ -11,7 +11,6 @@ type HomeScreenProp = NativeStackNavigationProp<RootStackParamList, 'Profile'>;
 
 const ProfileScreen: React.FC = () => {  
     const navigation = useNavigation<HomeScreenProp>();
-
     return (
       <View style={styles.container}>
         <ProfileTop></ProfileTop>

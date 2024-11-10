@@ -1,5 +1,5 @@
-const latitude = 40.730610; // Example: New York City latitude
-const longitude = -73.935242; // Example: New York City longitude
+const latitude = 42.72840000; // Example: New York City latitude
+const longitude = -73.69180000; // Example: New York City longitude
 
 const getNearbyMarkers = async () => {
     try {
@@ -14,6 +14,7 @@ const getNearbyMarkers = async () => {
         // Parse the JSON response
         const data = await response.json();
         console.log("Nearby markers:", data);
+        
     } catch (error) {
         console.error("Error fetching nearby markers:", error.message);
     }

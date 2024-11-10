@@ -21,10 +21,16 @@ const HomeScreen: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 30,
+    flex: 1.1,
+    width: '100%', 
     justifyContent: 'center',
     alignItems: 'center',
   },
+  map: {
+    flex: 0.75
+  }
+
 });
 
 export default HomeScreen;

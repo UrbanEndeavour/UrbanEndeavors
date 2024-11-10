@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import MapView, { Marker, Region } from 'react-native-maps';
+import { StyleSheet, View, Text } from 'react-native';
+import MapView, { Marker, Region, Callout } from 'react-native-maps';
 import locationsData from './data.json'; // Adjust path if needed
 
 const Map: React.FC = () => {
@@ -16,7 +16,7 @@ const Map: React.FC = () => {
     return Object.entries(item.Locations).map(([name, locationData]: [string, any]) => {
       const latitude = parseFloat(locationData.Longitude); 
       const longitude = parseFloat(locationData.Latitude);
-      
+
       // Debug log for checking each marker's data
       console.log(`Processing marker: ${name}, Latitude: ${latitude}, Longitude: ${longitude}`);
 
@@ -45,6 +45,15 @@ const Map: React.FC = () => {
             description={marker.description}
           />
         ))}
+         {/* Blue Dot for DCC */}
+         <Marker coordinate={{ latitude: 42.729356, longitude: -73.679286 }}>
+          <View style={styles.blueDot} />
+          <Callout>
+            <View>
+              <Text>Darrin Communications Center (DCC)</Text>
+            </View>
+          </Callout>
+        </Marker>
       </MapView>
     </View>
   );
@@ -58,6 +67,12 @@ const styles = StyleSheet.create({
   map: {
     flex: 1,       // Full height of the container
     width: '100%', // Full width of the screen
+  },
+  blueDot: {
+    width: 20,      // Adjust size as needed
+    height: 20,     // Adjust size as needed
+    backgroundColor: '#90D5FF',
+    borderRadius: 10, // Half of width/height for a perfect circle
   },
 });
 

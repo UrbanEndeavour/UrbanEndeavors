@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test App</title>
+  <link rel="stylesheet" href="objective.css">
+</head>
+<body>
+  <div class="App">
+    <div class="image-container">
+      <img src="https://via.placeholder.com/500" alt="Game" class="game-image" />
+    </div>
+    <div class="textbox-container">
+      <input type="text" class="text-box" placeholder="Words about location here" />
+    </div>
+    <div class="slider-container">
+      <input type="range" class="slider" min="0" max="1" step="1" id="mySlider" />
+      <p>Visited: <span id="slider-value">False</span></p>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('mySlider');
+    const sliderValue = document.getElementById('slider-value');
+
+    function updateSliderValue() {
+      const value = slider.value;
+      sliderValue.textContent = value == '1' ? 'True' : 'False';
+    }
+
+    slider.addEventListener('input', updateSliderValue);
+    updateSliderValue();
+  </script>
+</body>
+</html>

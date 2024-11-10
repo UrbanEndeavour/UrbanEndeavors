@@ -4,15 +4,102 @@ import ProfilePicture from '../profile-picture/ProfilePicture';
 
 const ProfileTop: React.FC = () => {
     const imageUrl = require('../../assets/images/react-logo.png');
+  
     return (
-      <View style={styles.container}>
-        <ProfilePicture uri={imageUrl} />
-        <Text style={styles.profileContainer}>Hello</Text>
+    <View style={styles.profileContainer}>
+      {/* Profile Picture Container */}
+      <View style={styles.imgNameContainer}>
+      <ProfilePicture uri={imageUrl}/>
+        <Text style={styles.profileTitle}>Your Title</Text>
       </View>
-    );
+
+      {/* Details Container */}
+      <View style={styles.detailsContainer}>
+        {/* Upper Container - Text and XP Bar */}
+        <View style={styles.upperContainer}>
+          <Text style={styles.detailText}>XP Level</Text>
+          <View style={styles.xpBarBackground}>
+            <View style={styles.xpBarFill} />
+          </View>
+        </View>
+
+        {/* Lower Container - Text and Integer */}
+        <View style={styles.lowerContainer}>
+          <Text style={styles.detailText}>Points:</Text>
+          <Text style={styles.pointsText}>1234</Text>
+        </View>
+      </View>
+    </View>
+  );
+
   };
 
 const styles = StyleSheet.create({
+  
+  profileContainer: {
+    position: 'absolute',
+    top: 0,
+    flexDirection: 'row',
+    padding: 10,
+    backgroundColor: 'blue',
+    height: '20%', // Adjust based on your design
+    width: '100%'
+  },
+  imgNameContainer: {
+    flex: 1, // 1/5th of the width
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    padding: 10,
+  },
+  profileImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    marginBottom: 5
+  },
+  profileTitle: {
+    fontSize: 16,
+    color: 'white',
+  },
+  detailsContainer: {
+    justifyContent: 'space-evenly',
+    flex: 4, // 4/5ths of the width
+    paddingLeft: 20,
+  },
+  upperContainer: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    marginBottom: 10,
+  },
+  detailText: {
+    fontSize: 14,
+    color: 'white',
+  },
+  xpBarBackground: {
+    width: '100%',
+    height: 10,
+    backgroundColor: '#333',
+    borderRadius: 5,
+    marginTop: 5,
+  },
+  xpBarFill: {
+    width: '50%', // Adjust width based on XP level
+    height: '100%',
+    backgroundColor: 'yellow',
+    borderRadius: 5,
+  },
+  lowerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  pointsText: {
+    fontSize: 14,
+    color: 'white',
+    marginLeft: 5,
+  }
+  
+  /*
   container: {
     flex: 1
   },
@@ -32,7 +119,18 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     flex: 4,
     backgroundColor: 'black'
-  }
+  },
+  */
 });
 
 export default ProfileTop;
+
+
+/*
+return (
+      <View style={styles.container}>
+        <ProfilePicture uri={imageUrl}/>
+        <Text style={styles.profileContainer}>Hello</Text>
+      </View>
+    );
+*/

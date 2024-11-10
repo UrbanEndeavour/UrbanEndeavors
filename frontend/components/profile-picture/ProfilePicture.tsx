@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
+import ReactLogo from '../../assets/images/defaulticon.jpg'; // Import the local image
 
-const ProfilePicture = ({ uri }: { uri: string }) => {
+const ProfilePicture = () => {
   return (
     <View style={styles.container}>
       <Image 
-        source={{ uri }} 
+        source={ReactLogo} // Directly use the imported image
         style={styles.profileImage} 
         onError={() => console.log('Failed to load image')} // Log or handle the error
       />
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25, // Half of width/height for a circle
     borderWidth: 2,
-    borderColor: '#808080', // Change to valid color value (with `#`)
+    borderColor: '#808080', // Use a valid color value
   },
 });
 

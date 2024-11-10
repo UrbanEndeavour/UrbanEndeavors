@@ -3,7 +3,6 @@ import { View, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from "../App";
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import NavbarBottom from '@/components/navbar-bottom/Navbar-Bottom';
 import ProfileTop from '@/components/profile-top/ProfileTop';
 import FriendsList from '@/components/friends-list/FriendsList'
 
@@ -16,7 +15,6 @@ const ProfileScreen: React.FC = () => {
       <View style={styles.container}>
         <ProfileTop></ProfileTop>
         <FriendsList></FriendsList>
-        <NavbarBottom></NavbarBottom>
         <Button title="Go to Home" onPress={() => navigation.navigate('HomeScreen')}/>
       </View>
     );

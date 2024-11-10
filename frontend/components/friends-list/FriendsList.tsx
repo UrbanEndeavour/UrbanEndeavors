@@ -15,17 +15,17 @@ const FriendsList: React.FC = () => {
             
             <View style = {styles.listContainer}>
                 <View style = {styles.friendContainer}>
-                    <ProfilePicture uri={imageUrl}/>
+                    <ProfilePicture/>
                     <Text style = {styles.friendName}>Person 1</Text>
                     <Text style = {styles.friendLevel}>Level 9000</Text>
                 </View>
                 <View style = {styles.friendContainer}>
-                    <ProfilePicture uri={imageUrl}/>
+                    <ProfilePicture/>
                     <Text style = {styles.friendName}>Person 1</Text>
                     <Text style = {styles.friendLevel}>Level 9000</Text>
                 </View>
                 <View style = {styles.friendContainer}>
-                    <ProfilePicture uri={imageUrl}/>
+                    <ProfilePicture/>
                     <Text style = {styles.friendName}>Person 1</Text>
                     <Text style = {styles.friendLevel}>Level 9000</Text>
                 </View>
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'red',
     flexDirection: 'column-reverse'
   },
   title: {
@@ -60,7 +59,6 @@ const styles = StyleSheet.create({
   listContainer: {
     flex: 3,
     flexDirection: 'column',
-    backgroundColor: 'blue',
     justifyContent: 'space-around'
   },
 
@@ -85,7 +83,6 @@ const styles = StyleSheet.create({
     flex: 2,
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: 'pink'
   }
 });
 

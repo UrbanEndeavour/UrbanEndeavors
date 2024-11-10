@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text,  ScrollView } from 'react-native';
 import MapView, { Marker, Region, Callout } from 'react-native-maps';
 import locationsData from './data.json'; // Adjust path if needed
 
 const Map: React.FC = () => {
+  const [selectedMarker, setSelectedMarker] = useState<string | null>(null); // State to track selected marker
+
   const initialRegion: Region = {
     latitude: 42.7284,
     longitude: -73.6918,
@@ -40,6 +42,8 @@ const Map: React.FC = () => {
             coordinate={{ latitude: marker.latitude, longitude: marker.longitude }}
             title={marker.name}
             description={marker.description}
+            pinColor={selectedMarker === marker.name ? 'blue' : 'red'} // Change color based on selection
+            onPress={() => setSelectedMarker(marker.name)}
           >
             {/* Custom Callout with ScrollView */}
             <Callout style={styles.customCallout}>
@@ -87,8 +91,9 @@ const styles = StyleSheet.create({
     borderRadius: 10, // Half of width/height for a perfect circle
   },
   customCallout: {
-    height: 200,  // Adjust the height of the Callout box
-    width: 200,   // Adjust the width as needed
+    height: 250,  // Adjust the height of the Callout box
+    width: 250,   // Adjust the width as needed
+    alignItems: 'flex-start', 
   },
   calloutContent: {
     padding: 2,  // Optional padding inside the callout

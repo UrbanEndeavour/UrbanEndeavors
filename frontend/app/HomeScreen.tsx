@@ -22,13 +22,13 @@ const HomeScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 30,
-    flex: 1.1,
+    flex: 1.2,
     width: '100%', 
     justifyContent: 'center',
     alignItems: 'center',
   },
   map: {
-    flex: 0.75
+    flex: 1
   }
 
 });

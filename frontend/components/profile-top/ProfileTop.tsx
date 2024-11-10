@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import ProfilePicture from '../profile-picture/ProfilePicture';
 
 const ProfileTop: React.FC = () => {
-  const imageUrl = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgratisography.com%2F&psig=AOvVaw2zKtJOoYHLR8iGauuj-4EX&ust=1731302113092000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCN3IyB0YkDFQAAAAAdAAAAABAE"
+    const imageUrl = require('../../assets/images/react-logo.png');
     return (
       <View style={styles.container}>
         <ProfilePicture uri={imageUrl} />

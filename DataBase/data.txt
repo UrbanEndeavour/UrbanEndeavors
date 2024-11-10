@@ -1,0 +1,15 @@
+-profiles
+    - username
+    - base location 
+    - points 
+    - friends 
+
+-Locations
+    - type of location (restarunt, mountument, store)
+    - points assignment 
+    - actual location, cordinates.  
+    - name
+    - description
+    - photo (maybe)
+
+    
